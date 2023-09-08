@@ -12,7 +12,7 @@
 #
 
 # --- Paramètres Globaux ---
-yabai -m config mouse_follows_focus off       # Le pointeur de la souris ne suit pas la fenêtre focalisée
+yabai -m config mouse_follows_focus om        # Le pointeur de la souris ne suit pas la fenêtre focalisée
 yabai -m config focus_follows_mouse off       # La fenêtre focalisée ne suit pas le pointeur de la souris
 yabai -m config window_origin_display default # La fenêtre originale est affichée par défaut
 yabai -m config window_placement second_child # Placement des nouvelles fenêtres en tant que second enfant dans le layout
@@ -50,10 +50,30 @@ yabai -m config window_gap 8     # Écart entre les fenêtres
 yabai -m config layout bsp       # Utilise le layout BSP (Binary Space Partitioning) par défaut
 
 # --- Configuration de la Souris ---
-yabai -m config mouse_modifier fn      # Modificateur pour les actions de la souris (touche 'fn')
+yabai -m config mouse_modifier alt     # Modificateur pour les actions de la souris (touche 'fn')
 yabai -m config mouse_action1 move     # Action 1 de la souris : déplacer la fenêtre
 yabai -m config mouse_action2 resize   # Action 2 de la souris : redimensionner la fenêtre
 yabai -m config mouse_drop_action swap # Action de dépôt de la souris : échanger les fenêtres
+
+# --- Règles d'Exclusion des Applications ---
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Discord$" manage=off
+yabai -m rule --add app="^Aperçu$" manage=off
+yabai -m rule --add app="^Calculette$" manage=off
+yabai -m rule --add app="^Réglages Système$" manage=off
+yabai -m rule --add app="^Ankama Launcher$" manage=off
+
+# --- Règles d'Assignation des Applications aux Espaces ---
+#yabai -m rule --add app="^Arc Browser$" space=1
+#yabai -m rule --add app="^kitty$" space=1
+#yabai -m rule --add app="^Discord$" space=3
+#yabai -m rule --add app="^Slack$" space=3
+#yabai -m rule --add app="^Notion$" space=3
+
+# --- Configuration des Espaces ---
+#yabai -m config --space 1 layout=bsp
+#yabai -m config --space 1 split_ratio=0.50
+#yabai -m config --space 4 split_ratio=0.70
 
 # Message de fin pour indiquer que la configuration a été chargée
 echo "yabai configuration loaded.."
