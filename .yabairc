@@ -1,0 +1,59 @@
+#!/usr/bin/env sh
+
+# --- Scripting Addition ---
+# Pour que cela fonctionne, vous devez configurer sudo de manière à
+# pouvoir exécuter la commande sans mot de passe
+# Voir cette page wiki pour plus d'informations :
+# https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
+#
+# Activation du scripting addition pour des fonctionnalités avancées :
+# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# sudo yabai --load-sa
+#
+
+# --- Paramètres Globaux ---
+yabai -m config mouse_follows_focus off       # Le pointeur de la souris ne suit pas la fenêtre focalisée
+yabai -m config focus_follows_mouse off       # La fenêtre focalisée ne suit pas le pointeur de la souris
+yabai -m config window_origin_display default # La fenêtre originale est affichée par défaut
+yabai -m config window_placement second_child # Placement des nouvelles fenêtres en tant que second enfant dans le layout
+yabai -m config window_zoom_persist on        # Persiste l'état de zoom des fenêtres
+yabai -m config window_topmost off            # Désactive la mise en avant-plan des fenêtres
+
+# --- Apparence de la Fenêtre ---
+yabai -m config window_shadow on                # Active les ombres des fenêtres
+yabai -m config window_animation_duration 0.0   # Durée de l'animation de la fenêtre (désactivée)
+yabai -m config window_animation_frame_rate 120 # Taux de rafraîchissement des animations de la fenêtre
+yabai -m config window_opacity_duration 0.0     # Durée de l'opacité variable de la fenêtre (désactivée)
+yabai -m config active_window_opacity 1.0       # Opacité de la fenêtre active
+yabai -m config normal_window_opacity 0.70      # Opacité des fenêtres normales (non actives)
+yabai -m config window_opacity on               # Active la fonction d'opacité variable
+
+# --- Bordures de la Fenêtre ---
+yabai -m config insert_feedback_color 0xffd75f5f      # Couleur de feedback lors de l'insertion
+yabai -m config active_window_border_color 0xffFFC1E1 # Couleur de la bordure de la fenêtre active
+yabai -m config normal_window_border_color 0xffA8D5E2 # Couleur de la bordure des fenêtres normales
+yabai -m config window_border_width 4                 # Largeur de la bordure de la fenêtre
+yabai -m config window_border_radius 12               # Rayon de la bordure de la fenêtre (pour les coins arrondis)
+yabai -m config window_border_blur on                 # Active l'effet de flou sur les bordures de fenêtre
+yabai -m config window_border_hidpi on                # Active le support HiDPI pour les bordures de fenêtre
+yabai -m config window_border off                     # Désactive les bordures de fenêtre (à activer si nécessaire)
+
+# --- Configuration du Layout ---
+yabai -m config split_ratio 0.50 # Ratio de division par défaut pour le layout
+yabai -m config split_type auto  # Type de division automatique
+yabai -m config auto_balance off # Désactive l'équilibrage automatique des espaces de travail
+yabai -m config top_padding 8    # Marge supérieure autour des fenêtres
+yabai -m config bottom_padding 8 # Marge inférieure autour des fenêtres
+yabai -m config left_padding 8   # Marge gauche autour des fenêtres
+yabai -m config right_padding 8  # Marge droite autour des fenêtres
+yabai -m config window_gap 8     # Écart entre les fenêtres
+yabai -m config layout bsp       # Utilise le layout BSP (Binary Space Partitioning) par défaut
+
+# --- Configuration de la Souris ---
+yabai -m config mouse_modifier fn      # Modificateur pour les actions de la souris (touche 'fn')
+yabai -m config mouse_action1 move     # Action 1 de la souris : déplacer la fenêtre
+yabai -m config mouse_action2 resize   # Action 2 de la souris : redimensionner la fenêtre
+yabai -m config mouse_drop_action swap # Action de dépôt de la souris : échanger les fenêtres
+
+# Message de fin pour indiquer que la configuration a été chargée
+echo "yabai configuration loaded.."
