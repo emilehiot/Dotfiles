@@ -50,30 +50,32 @@ yabai -m config window_gap 8     # Écart entre les fenêtres
 yabai -m config layout bsp       # Utilise le layout BSP (Binary Space Partitioning) par défaut
 
 # --- Configuration de la Souris ---
-yabai -m config mouse_modifier alt     # Modificateur pour les actions de la souris (touche 'fn')
+yabai -m config mouse_modifier fn      # Modificateur pour les actions de la souris (touche 'fn')
 yabai -m config mouse_action1 move     # Action 1 de la souris : déplacer la fenêtre
 yabai -m config mouse_action2 resize   # Action 2 de la souris : redimensionner la fenêtre
 yabai -m config mouse_drop_action swap # Action de dépôt de la souris : échanger les fenêtres
 
 # --- Règles d'Exclusion des Applications ---
 yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Discord$" manage=off
 yabai -m rule --add app="^Aperçu$" manage=off
 yabai -m rule --add app="^Calculette$" manage=off
 yabai -m rule --add app="^Réglages Système$" manage=off
 yabai -m rule --add app="^Ankama Launcher$" manage=off
 
 # --- Règles d'Assignation des Applications aux Espaces ---
-#yabai -m rule --add app="^Arc Browser$" space=1
-#yabai -m rule --add app="^kitty$" space=1
-#yabai -m rule --add app="^Discord$" space=3
-#yabai -m rule --add app="^Slack$" space=3
-#yabai -m rule --add app="^Notion$" space=3
+# --- Space 3 ---
+yabai -m rule --add app="^Discord$" space=3
+yabai -m rule --add app="^Slack$" space=3
+yabai -m rule --add app="^Notion$" space=3
+# --- Space 4 ---
+yabai -m rule --add app="^Ankama Launcher$" space=4
+yabai -m rule --add app="^Dofus$" space=4
 
 # --- Configuration des Espaces ---
-#yabai -m config --space 1 layout=bsp
-#yabai -m config --space 1 split_ratio=0.50
-#yabai -m config --space 4 split_ratio=0.70
+# --- Space 3 ---
+yabai -m window --filter app="^Notion$" --grid 2:1:1:0:1:2 # Notion occupe 50% de l'écran à droite
+# --- Space 4 ---
+yabai -m window --filter app="^Dofus$" --grid 3:3:2:0:2:3 # Dofus occupe 70% de l'écran à droite
 
 # Message de fin pour indiquer que la configuration a été chargée
 echo "yabai configuration loaded.."
