@@ -1,0 +1,95 @@
+# ============================================================
+# Section 1 : Lancement d'application et raccourcis (avec CMD)
+# ============================================================
+
+# ---------------------------------
+# 1.1 Lancement d'applications
+# ---------------------------------
+
+cmd - return : open -na "kitty" --args --single-instance -d ~
+cmd - i : open -na "Arc"
+cmd - escape : open "x-apple.systempreferences:"
+
+# ---------------------------------
+# 1.2 Raccourcis pour la gestion des applications et de la configuration
+# ---------------------------------
+
+# Fermer l'application en cours
+cmd - q : yabai -m window --close # Ferme l'application actuellement focalisée
+
+# Tuer une application qui ne répond pas (mettez d'abord le focus sur l'application)
+cmd - k : yabai -m window --close forcefully # Ferme de force l'application actuellement focalisée
+
+# Relancer la configuration Yabai
+cmd - alt - r : yabai -m config --load # Recharge la configuration de Yabai
+
+# Relancer la configuration SKHD (ajustez le chemin selon votre configuration)
+cmd - alt - shift - r : skhd -c ~/.skhdrc # Recharge la configuration de SKHD
+
+# ============================================================
+# Section 2 : Contrôle des fenêtres Yabai (avec ALT / OPT )
+# ============================================================
+
+# ---------------------------------
+# 2.1 Contrôle des fenêtres
+# ---------------------------------
+
+# Changer le focus entre les fenêtres
+alt - tab : yabai -m window --focus next # Focus sur la fenêtre suivante
+alt - shift - tab : yabai -m window --focus prev # Focus sur la fenêtre précédente
+
+# Déplacer les fenêtres
+alt - h : yabai -m window --move west # Déplace la fenêtre vers l'ouest
+alt - j : yabai -m window --move south # Déplace la fenêtre vers le sud
+alt - k : yabai -m window --move north # Déplace la fenêtre vers le nord
+alt - l : yabai -m window --move east # Déplace la fenêtre vers l'est
+
+# Permuter les fenêtres (échange la position avec une autre fenêtre)
+alt - cmd - h : yabai -m window --swap west # Permute la fenêtre avec celle de l'ouest
+alt - cmd - j : yabai -m window --swap south # Permute la fenêtre avec celle du sud
+alt - cmd - k : yabai -m window --swap north # Permute la fenêtre avec celle du nord
+alt - cmd - l : yabai -m window --swap east # Permute la fenêtre avec celle de l'est
+
+# Redimensionner les fenêtres (augmente/diminue la taille de la fenêtre)
+alt - shift - h : yabai -m window --resize left:10:0 # Augmente la largeur de la fenêtre de 10 pixels du côté gauche
+alt - shift - j : yabai -m window --resize bottom:0:-10 # Réduit la hauteur de la fenêtre de 10 pixels du côté inférieur
+alt - shift - k : yabai -m window --resize top:0:10 # Augmente la hauteur de la fenêtre de 10 pixels du côté supérieur
+alt - shift - l : yabai -m window --resize right:-10:0 # Réduit la largeur de la fenêtre de 10 pixels du côté droit
+
+# Équilibrer la taille des fenêtres
+alt - 0 : yabai -m space --balance # Équilibre la taille des fenêtres dans l'espace actuel
+
+# ---------------------------------
+# 2.2 Contrôle des fenêtres flottantes
+# ---------------------------------
+
+# Flotter / dé-flotter la fenêtre et centrer à l'écran
+alt - ` : yabai -m window --toggle float --grid 4:4:1:1:2:2 # Bascule la fenêtre en mode flottant et la centre sur l'écran avec une grille spécifiée
+
+# Gestion des Fenêtres Flottantes
+alt - up     : yabai -m window --grid 1:1:0:0:1:1   # Remplit l'écran avec la fenêtre flottante
+alt - left   : yabai -m window --grid 1:2:0:0:1:1   # Remplit la moitié gauche de l'écran avec la fenêtre flottante
+alt - right  : yabai -m window --grid 1:2:1:0:1:1   # Remplit la moitié droite de l'écran avec la fenêtre flottante
+# ---------------------------------
+alt - shift - up   : yabai -m window --grid 2:1:0:0:1:1   # Remplit la moitié supérieure de l'écran avec la fenêtre flottante
+alt - shift - down : yabai -m window --grid 2:1:0:1:1:1   # Remplit la moitié inférieure de l'écran avec la fenêtre flottante
+# ---------------------------------
+alt - shift - left - up    : yabai -m window --grid 2:2:0:0:1:1   # Remplit le quart supérieur gauche de l'écran avec la fenêtre flottante
+alt - shift - left - down  : yabai -m window --grid 2:2:0:1:1:1   # Remplit le quart inférieur gauche de l'écran avec la fenêtre flottante
+# ---------------------------------
+alt - shift - right - up   : yabai -m window --grid 2:2:1:0:1:1   # Remplit le quart supérieur droit de l'écran avec la fenêtre flottante
+alt - shift - right - down : yabai -m window --grid 2:2:1:1:1:1   # Remplit le quart inférieur droit de l'écran avec la fenêtre flottante
+
+# ---------------------------------
+# 2.3 Options supplémentaires
+# ---------------------------------
+
+# Basculer sticky(+float), topmost, picture-in-picture
+alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip # Bascule les options sticky, topmost et picture-in-picture pour la fenêtre
+
+# Basculer le zoom de la fenêtre
+alt - d : yabai -m window --toggle zoom-parent # Bascule le zoom de la fenêtre au parent
+alt - f : yabai -m window --toggle zoom-fullscreen # Bascule le zoom de la fenêtre en plein écran
+
+# Basculer le type de split de la fenêtre
+alt - e : yabai -m window --toggle split # Bascule le type de split de la fenêtre
