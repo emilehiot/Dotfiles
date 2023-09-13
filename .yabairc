@@ -1,68 +1,69 @@
 #!/usr/bin/env sh
 
 # --- Scripting Addition ---
-# Pour que cela fonctionne, vous devez configurer sudo de manière à
-# pouvoir exécuter la commande sans mot de passe
-# Voir cette page wiki pour plus d'informations :
+# For this to work, you must configure sudo to
+# be able to execute the command without a password
+# See this wiki page for more information:
 # https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
 #
-# Activation du scripting addition pour des fonctionnalités avancées :
+# Enabling scripting addition for advanced features:
 # yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 # sudo yabai --load-sa
 #
 
-# --- Paramètres Globaux ---
-yabai -m config mouse_follows_focus om        # Le pointeur de la souris ne suit pas la fenêtre focalisée
-yabai -m config focus_follows_mouse off       # La fenêtre focalisée ne suit pas le pointeur de la souris
-yabai -m config window_origin_display default # La fenêtre originale est affichée par défaut
-yabai -m config window_placement second_child # Placement des nouvelles fenêtres en tant que second enfant dans le layout
-yabai -m config window_zoom_persist on        # Persiste l'état de zoom des fenêtres
-yabai -m config window_topmost off            # Désactive la mise en avant-plan des fenêtres
+# --- Global Settings ---
+yabai -m config mouse_follows_focus om        # The mouse pointer does not follow the focused window
+yabai -m config focus_follows_mouse off       # The focused window does not follow the mouse pointer
+yabai -m config window_origin_display default # The original window is displayed by default
+yabai -m config window_placement second_child # Placement of new windows as the second child in the layout
+yabai -m config window_zoom_persist on        # Persist the zoom state of windows
+yabai -m config window_topmost off            # Disable bringing windows to the foreground
 
-# --- Apparence de la Fenêtre ---
-yabai -m config window_shadow on                # Active les ombres des fenêtres
-yabai -m config window_animation_duration 0.0   # Durée de l'animation de la fenêtre (désactivée)
-yabai -m config window_animation_frame_rate 120 # Taux de rafraîchissement des animations de la fenêtre
-yabai -m config window_opacity_duration 0.0     # Durée de l'opacité variable de la fenêtre (désactivée)
-yabai -m config active_window_opacity 1.0       # Opacité de la fenêtre active
-yabai -m config normal_window_opacity 0.70      # Opacité des fenêtres normales (non actives)
-yabai -m config window_opacity on               # Active la fonction d'opacité variable
+# --- Window Appearance ---
+yabai -m config window_shadow on                # Enable window shadows
+yabai -m config window_animation_duration 0.0   # Window animation duration (disabled)
+yabai -m config window_animation_frame_rate 120 # Window animation frame rate
+yabai -m config window_opacity_duration 0.0     # Window variable opacity duration (disabled)
+yabai -m config active_window_opacity 1.0       # Active window opacity
+yabai -m config normal_window_opacity 0.70      # Normal (non-active) window opacity
+yabai -m config window_opacity on               # Enable variable opacity function
 
-# --- Bordures de la Fenêtre ---
-yabai -m config insert_feedback_color 0xffd75f5f      # Couleur de feedback lors de l'insertion
-yabai -m config active_window_border_color 0xffFFC1E1 # Couleur de la bordure de la fenêtre active
-yabai -m config normal_window_border_color 0xffA8D5E2 # Couleur de la bordure des fenêtres normales
-yabai -m config window_border_width 4                 # Largeur de la bordure de la fenêtre
-yabai -m config window_border_radius 12               # Rayon de la bordure de la fenêtre (pour les coins arrondis)
-yabai -m config window_border_blur on                 # Active l'effet de flou sur les bordures de fenêtre
-yabai -m config window_border_hidpi on                # Active le support HiDPI pour les bordures de fenêtre
-yabai -m config window_border off                     # Désactive les bordures de fenêtre (à activer si nécessaire)
+# --- Window Borders ---
+yabai -m config insert_feedback_color 0xffd75f5f      # Feedback color during insertion
+yabai -m config active_window_border_color 0xffFFC1E1 # Active window border color
+yabai -m config normal_window_border_color 0xffA8D5E2 # Normal window border color
+yabai -m config window_border_width 4                 # Window border width
+yabai -m config window_border_radius 12               # Window border radius (for rounded corners)
+yabai -m config window_border_blur on                 # Enable blur effect on window borders
+yabai -m config window_border_hidpi on                # Enable HiDPI support for window borders
+yabai -m config window_border off                     # Disable window borders (enable if necessary)
 
-# --- Configuration du Layout ---
-yabai -m config split_ratio 0.50 # Ratio de division par défaut pour le layout
-yabai -m config split_type auto  # Type de division automatique
-yabai -m config auto_balance off # Désactive l'équilibrage automatique des espaces de travail
-yabai -m config top_padding 8    # Marge supérieure autour des fenêtres
-yabai -m config bottom_padding 8 # Marge inférieure autour des fenêtres
-yabai -m config left_padding 8   # Marge gauche autour des fenêtres
-yabai -m config right_padding 8  # Marge droite autour des fenêtres
-yabai -m config window_gap 8     # Écart entre les fenêtres
-yabai -m config layout bsp       # Utilise le layout BSP (Binary Space Partitioning) par défaut
+# --- Layout Configuration ---
+yabai -m config split_ratio 0.50 # Default split ratio for the layout
+yabai -m config split_type auto  # Automatic split type
+yabai -m config auto_balance off # Disable automatic workspace balancing
+yabai -m config top_padding 8    # Top margin around windows
+yabai -m config bottom_padding 8 # Bottom margin around windows
+yabai -m config left_padding 8   # Left margin around windows
+yabai -m config right_padding 8  # Right margin around windows
+yabai -m config window_gap 8     # Gap between windows
+yabai -m config layout bsp       # Use the default BSP (Binary Space Partitioning) layout
 
-# --- Configuration de la Souris ---
-yabai -m config mouse_modifier fn      # Modificateur pour les actions de la souris (touche 'fn')
-yabai -m config mouse_action1 move     # Action 1 de la souris : déplacer la fenêtre
-yabai -m config mouse_action2 resize   # Action 2 de la souris : redimensionner la fenêtre
-yabai -m config mouse_drop_action swap # Action de dépôt de la souris : échanger les fenêtres
+# --- Mouse Configuration ---
+yabai -m config mouse_modifier fn      # Modifier for mouse actions (fn key)
+yabai -m config mouse_action1 move     # Mouse action 1: move window
+yabai -m config mouse_action2 resize   # Mouse action 2: resize window
+yabai -m config mouse_drop_action swap # Mouse drop action: swap windows
 
-# --- Règles d'Exclusion des Applications ---
+# --- Application Exclusion Rules ---
 yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Aperçu$" manage=off
-yabai -m rule --add app="^Calculette$" manage=off
-yabai -m rule --add app="^Réglages Système$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Ankama Launcher$" manage=off
+yabai -m rule --add app="^Music$" manage=off
 
-# --- Règles d'Assignation des Applications aux Espaces ---
+# --- Application Assignment Rules to Spaces ---
 # --- Space 3 ---
 yabai -m rule --add app="^Discord$" space=3
 yabai -m rule --add app="^Slack$" space=3
@@ -71,11 +72,11 @@ yabai -m rule --add app="^Notion$" space=3
 yabai -m rule --add app="^Ankama Launcher$" space=4
 yabai -m rule --add app="^Dofus$" space=4
 
-# --- Configuration des Espaces ---
-# --- Space 3 ---
-yabai -m window --filter app="^Notion$" --grid 2:1:1:0:1:2 # Notion occupe 50% de l'écran à droite
-# --- Space 4 ---
-yabai -m window --filter app="^Dofus$" --grid 3:3:2:0:2:3 # Dofus occupe 70% de l'écran à droite
+# --- Space Configuration ---
+# --- Space 3 --- (DONT WORK)
+# yabai -m window --filter app="^Notion$" --grid 2:1:1:0:1:2 # Notion occupies 50% of the screen on the right
+# --- Space 4 --- (DONT WORK)
+# yabai -m window --filter app="^Dofus$" --grid 3:3:2:0:2:3 # Dofus occupies 70% of the screen on the right
 
-# Message de fin pour indiquer que la configuration a été chargée
+# End message to indicate that the configuration has been loaded
 echo "yabai configuration loaded.."
