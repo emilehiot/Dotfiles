@@ -1,35 +1,47 @@
 # ============================================================
-# Section 1 : Lancement d'application et raccourcis (avec CMD)
+# Section 1: Application Launching and Shortcuts (with CMD)
 # ============================================================
 
-# 1.1 Lancement d'applications
+# 1.1 Launching Applications
 cmd - return : open -na "kitty" --args --single-instance -d ~
 cmd - i : open -na "Arc"
 cmd - escape : open "x-apple.systempreferences:"
 
-# 2.1 Contrôle des fenêtres
-# Focus Window
+# 1.2 Shortcuts for Application Management and Configuration
+
+
+# ============================================================
+# Section 2: Yabai Window Control (with ALT / OPT)
+# ============================================================
+
+# 2.1 Window Control
+# Change Focus Between Windows
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
-# Move Window
+# Move Windows
 cmd + alt - h : yabai -m window --move west
 cmd + alt - j : yabai -m window --move south
 cmd + alt - k : yabai -m window --move north
 cmd + alt - l : yabai -m window --move east
 
-# Swap Window
+# Swap Windows (exchange position with another window)
 shift + alt - h : yabai -m window --swap west
 shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
 shift + alt - l : yabai -m window --swap east
 
-# Resize Window
-shift + cmd - h : yabai -m window --resize left:-10:0
-shift + cmd - j : yabai -m window --resize bottom:0:10
-shift + cmd - k : yabai -m window --resize top:0:-10
-shift + cmd - l : yabai -m window --resize right:10:0
-# Reset Window
+# Resize Windows (increase/decrease window size)
+shift + cmd - h : yabai -m window --resize left:10:0
+shift + cmd - j : yabai -m window --resize bottom:0:-10
+shift + cmd - k : yabai -m window --resize top:0:10
+shift + cmd - l : yabai -m window --resize right:-10:0
+
+# Balance Window Sizes
 alt - 0 : yabai -m space --balance
+
+# 2.2 Floating Window Control
+# Float / Unfloat Window and Center on Screen
+alt - z : yabai -m window --toggle float --grid 4:4:1:1:2:2
