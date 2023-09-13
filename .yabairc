@@ -57,12 +57,29 @@ yabai -m config mouse_action2 resize   # Mouse action 2: resize window
 yabai -m config mouse_drop_action swap # Mouse drop action: swap windows
 
 # --- Application Exclusion Rules ---
+# --- System Os --- #
 yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Preview$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Aperçu$" manage=off
+yabai -m rule --add app="^Calculette$" manage=off
+yabai -m rule --add app="^Réglages Système$" manage=off
+yabai -m rule --add app="^Musique$" manage=off
+yabai -m rule --add app="^Photos$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Mail$" manage=off
+yabai -m rule --add app="^Calendrier$" manage=off
+yabai -m rule --add app="^Contacts$" manage=off
+yabai -m rule --add app="^Rappels$" manage=off
+yabai -m rule --add app="^Notes$" manage=off
+yabai -m rule --add app="^Plans$" manage=off
+yabai -m rule --add app="^Actualités$" manage=off
+yabai -m rule --add app="^Podcasts$" manage=off
+yabai -m rule --add app="^Maison$" manage=off
+yabai -m rule --add app="^Livres$" manage=off
+yabai -m rule --add app="^FaceTime$" manage=off
+yabai -m rule --add app="^Bourse$" manage=off
+yabai -m rule --add app="^Météo$" manage=off
+# --- Application --- #
 yabai -m rule --add app="^Ankama Launcher$" manage=off
-yabai -m rule --add app="^Music$" manage=off
 
 # --- Application Assignment Rules to Spaces ---
 # --- Space 3 ---
