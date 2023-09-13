@@ -18,6 +18,7 @@ yabai -m config window_origin_display default # The original window is displayed
 yabai -m config window_placement second_child # Placement of new windows as the second child in the layout
 yabai -m config window_zoom_persist on        # Persist the zoom state of windows
 yabai -m config window_topmost off            # Disable bringing windows to the foreground
+yabai -m config external_bar all:28:0
 
 # --- Window Appearance ---
 yabai -m config window_shadow on                # Enable window shadows
