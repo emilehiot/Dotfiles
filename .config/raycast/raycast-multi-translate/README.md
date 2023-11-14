@@ -12,10 +12,6 @@ A Raycast extension that translates text to multiple languages at once.
 
 <img width="862" src="https://github.com/antfu/raycast-multi-translate/assets/11247099/593bd567-0383-47ad-9a94-b576c2724350">
 
-## Motivation
-
-I speak Chinese, work in English, live in France, and sometimes also consume Japanese content. I do language-switching all the time. For example, I'd like to know what's the meaning of a new English word, find the English translation of a Chinese word, or verify if my French sentence is correct, etc. Most of the time I just need a quick answer, but I found I spend quite a lot of time telling the translator which language **from** and **to**, which should be detected automatically. So instead of setting the language manually every time, let's translate it to all languages we use at once.
-
 ## Features
 
 
